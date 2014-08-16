@@ -1,14 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>LearningApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>LearningApp</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+	    <div class="navbar-inner">
+		    <div class="container">
+		    <%= link_to "Learning app", root_path, class: "brand" %>
+			    <nav>
+				    <ul class="nav pull-right">
+					    <li><%= link_to "Home",    "#" %></li>
+					    <li><%= link_to "Help",    "#" %></li>
+              <%# if signed_in? %>
+                <li><%= link_to "Users", "#" %></li>
+                <li id="fat-menu" class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Account <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Profile", "#" %></li>
+                    <li><%= link_to "Settings", "#" %></li>
+                    <li class="divider"></li>
+                    <li>
+                      <%= link_to "Sign out", "#", method: "delete" %>
+                    </li>
+                  </ul>
+                </li>
+              <%# else %>
+                <li><%= link_to "Sign in", "#" %></li>
+              <%# end %>	
+            </ul>
+			    </nav>
+		    </div>
+	    </div>
+    </header>
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+      <% end %>
+    <div class= "wrapper_single">
+      <div class="container">
+	      <%= yield %>
+	    </div>
+    </div>
+      <footer class="footer">
+        <div class="container">
+          <div class = "site-footer">
+            <small>
+              <a href="http://railstutorial.org/">Rails Tutorial</a>
+              by Michael Hartl
+            </small>
+            <nav>
+              <ul class = "site-footer-links pull-right nav">
+                <li><%= link_to "About",   "#" %></li>
+                <li><%= link_to "Contact", "#" %></li>
+                <li><a href="http://news.railstutorial.org/">News</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </footer>
+  </body>
 </html>
