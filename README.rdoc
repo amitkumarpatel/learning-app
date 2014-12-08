@@ -1,3 +1,4 @@
+[ ![Codeship Status for amitkumarpatel/learning-app](https://codeship.com/projects/794ace70-6118-0132-82dc-1288075d9375/status)](https://codeship.com/projects/51734)
 == README
 
 This README would normally document whatever steps are necessary to get the
