@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://lh5.googleusercontent.com/-4wnpOZzpOAo/UBd-tH1pUeI/AAAAAAAAADk/mhvL_Lmaf1c/s260-no/GAME-store-logo.jpg" rel="icon">
     <title>LearningApp</title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -41,20 +42,17 @@
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
-    <div class= "wrapper_single">
-      <div class="container">
+    <div  id="front-wrapper"class= "wrapper_single">
 	      <%= yield %>
-	    </div>
     </div>
       <footer class="footer">
         <div class="container">
           <div class = "site-footer">
-            <small>
-              <a href="http://railstutorial.org/">Rails Tutorial</a>
-              by Michael Hartl
-            </small>
+            <p class="pull-right">
+              Copyright © 2013 - Amit Kumar Patel
+            </p>
             <nav>
-              <ul class = "site-footer-links pull-right nav">
+              <ul class = "site-footer-links nav">
                 <li><%= link_to "About",   "#" %></li>
                 <li><%= link_to "Contact", "#" %></li>
                 <li><a href="http://news.railstutorial.org/">News</a></li>
