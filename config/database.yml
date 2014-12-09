@@ -53,10 +53,20 @@ test:
   username: postgres
   password:
 
+#production:
+#  adapter: postgresql
+#  encoding: unicode
+#  database: learning-app_production
+#  pool: 5
+#  username: postgres
+#  password:
+
+# setup for amazon elastibeanstack
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: learning-app_production
-  pool: 5
-  username: postgres
-  password:
+  adapter: mysql2
+  encoding: utf8
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
