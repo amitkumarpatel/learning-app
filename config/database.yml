@@ -61,7 +61,7 @@ test:
 #  username: postgres
 #  password:
 
- setup for amazon elastibeanstack
+# setup for amazon elastibeanstack
 production:
   adapter: mysql2
   encoding: utf8
